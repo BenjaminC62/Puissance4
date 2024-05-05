@@ -1,0 +1,25 @@
+
+Ã
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦±í 8½º×î1J$33281164-63b3-4440-b94f-45a04402f945
+É
+java:S1186="€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú¿ûØúÿÿÿÿ8¾º×î1J$01882670-3c21-4a15-8429-054c0f300bb3
+É
+java:S1186B"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ë÷ëçüÿÿÿÿ8¾º×î1J$a6f6b0b0-2a9d-42bb-9fda-50062002ee37
+Ã
+java:S1186G"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™ì'8¾º×î1J$0f191b69-6ba8-4dbb-ab5b-3b2941f31d84
+É
+java:S1186L"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ø¥¶Úÿÿÿÿÿ8¾º×î1J$f45fc790-1cfa-4752-b650-cfcc162a8fca
+Ä
+java:S1186Q"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡’€ï8¾º×î1J$5cfc1f76-7332-4655-95c6-b7f641059be8
+Ä
+java:S1186V"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(šäôÄ8¾º×î1J$a116df47-5608-4b21-8e9c-8510a772d4ef
+É
+java:S1186["€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(’±ÿûÿÿÿÿ8¾º×î1J$6fa269ec-35fc-4a99-8ceb-a83926a7899a
+œ
+java:S1450"TRemove the "jeton" field and declare it as a local variable in the relevant methods.(†‘ïüÿÿÿÿ8¢¶Ë×î1J$f1e2a317-16cc-4f23-8644-9eaa15687c94
+f
+java:S1128"Remove this duplicated import.(î•¯¼ıÿÿÿÿ8Éº×î1J$15919265-34cd-434d-a324-24686271cab5
+f
+java:S1128"Remove this duplicated import.(ÃÚ¢„şÿÿÿÿ8Êº×î1J$6b8a602d-0a31-4005-bfd1-ce1127402b92
+q
+java:S1068")Remove this unused "jeton" private field.(†‘ïüÿÿÿÿ8Êº×î1J$ca95efeb-07f2-4803-811f-7c92f2a7735b
