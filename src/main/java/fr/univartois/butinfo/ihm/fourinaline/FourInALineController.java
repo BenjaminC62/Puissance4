@@ -95,7 +95,6 @@ public class  FourInALineController{
 
     private void placeToken(int column, ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
-        // Find the column index
         int columnIndex = -1;
         for (int i = 0; i < moveButtons.length; i++) {
             if (moveButtons[i] == clickedButton) {
@@ -103,26 +102,20 @@ public class  FourInALineController{
                 break;
             }
         }
-        // Check if the column index is valid
         if (columnIndex == column) {
-            // Find the first available row in the selected column
             int rowIndex = grid.play(jeton, columnIndex);
-            if (rowIndex != -1) { // If a valid empty cell is found
-                // Place the token in the cell
-                cells[rowIndex][columnIndex].setImage(loadImage(grid.get(rowIndex,columnIndex).toString())); // Replace "path_to_your_token_image" with the actual path to your token image
-                // Check if the game is over
+            if (rowIndex != -1) {
+                cells[rowIndex][columnIndex].setImage(loadImage(grid.get(rowIndex,columnIndex).toString()));
                 if (grid.findFourInALine().isPresent() || grid.isFull()) {
-                    // If there's a winner or the grid is full, end the game
-                    setDesable(true); // Assuming you have a method to disable all buttons
+                    setDesable(true);
                 } else {
-                    // Otherwise, switch to the next player's turn
                     jeton = jeton.next();
                 }
             } else {
-                // Error: Column is full, handle accordingly
+                System.out.println("Error");
             }
         } else {
-            // Error: clicked the wrong button, handle accordingly
+            System.out.println("Error");
         }
     }
 
