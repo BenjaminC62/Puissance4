@@ -4,6 +4,7 @@
 
 package fr.univartois.butinfo.ihm.fourinaline.controller;
 
+import fr.univartois.butinfo.ihm.fourinaline.model.Game;
 import fr.univartois.butinfo.ihm.fourinaline.model.Grid;
 import fr.univartois.butinfo.ihm.fourinaline.model.Token;
 import javafx.event.ActionEvent;
@@ -40,6 +41,11 @@ public class  FourInALineController{
     }
 
     private Grid grid;
+    private Game game;
+
+    public void setGame(Game game){
+        this.game = game;
+    }
 
     public FourInALineController(){
         grid = new Grid();
@@ -103,10 +109,10 @@ public class  FourInALineController{
             }
         }
         if (columnIndex == column) {
-            int rowIndex = grid.play(jeton, columnIndex);
+            int rowIndex = game.getGrille().play(jeton, columnIndex);
             if (rowIndex != -1) {
-                cells[rowIndex][columnIndex].setImage(loadImage(grid.get(rowIndex,columnIndex).toString()));
-                if (grid.findFourInALine().isPresent() || grid.isFull()) {
+                cells[rowIndex][columnIndex].setImage(loadImage(game.getGrille().get(rowIndex,columnIndex).toString()));
+                if (game.getGrille().findFourInALine().isPresent() || game.getGrille().isFull()) {
                     setDesable(true);
                 } else {
                     jeton = jeton.next();
@@ -139,13 +145,13 @@ public class  FourInALineController{
     private void afficheGrid(){
         for(int i = 0 ; i < cells.length ; i++){
             for(int j = 0 ; j < cells[i].length; j ++){
-                cells[i][j].setImage(loadImage(grid.get(i,j).toString()));
+                cells[i][j].setImage(loadImage(game.getGrille().get(i,j).toString()));
             }
         }
     }
 
     private void init(){
-        grid.clear();
+        game.getGrille().clear();
         setDesable(false);
         jeton = Token.YELLOW;
         afficheGrid();
