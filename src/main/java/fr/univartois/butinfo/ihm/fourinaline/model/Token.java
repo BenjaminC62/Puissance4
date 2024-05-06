@@ -14,7 +14,7 @@
  * Tous droits réservés.
  */
 
-package fr.univartois.butinfo.ihm.fourinaline;
+package fr.univartois.butinfo.ihm.fourinaline.model;
 
 /**
  * L'énumération Token représente les jetons utilisés dans le jeu

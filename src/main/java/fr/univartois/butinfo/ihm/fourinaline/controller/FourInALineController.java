@@ -2,15 +2,15 @@
  * Sample Skeleton for 'puissance4.fxml' Controller Class
  */
 
-package fr.univartois.butinfo.ihm.fourinaline;
+package fr.univartois.butinfo.ihm.fourinaline.controller;
 
+import fr.univartois.butinfo.ihm.fourinaline.model.Grid;
+import fr.univartois.butinfo.ihm.fourinaline.model.Token;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;

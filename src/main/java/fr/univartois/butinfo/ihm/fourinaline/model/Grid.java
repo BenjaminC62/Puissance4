@@ -14,7 +14,7 @@
  * Tous droits réservés.
  */
 
-package fr.univartois.butinfo.ihm.fourinaline;
+package fr.univartois.butinfo.ihm.fourinaline.model;
 
 import java.util.Optional;
 
