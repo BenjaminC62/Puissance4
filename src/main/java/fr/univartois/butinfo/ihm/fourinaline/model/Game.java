@@ -35,11 +35,6 @@ public class Game {
         return grid;
     }
 
-    private void jetonPartie(){
-        grid.clear();
-        jeton = Token.YELLOW;
-    }
-
     public Grid getGrid() {
         return grid;
     }
