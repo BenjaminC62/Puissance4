@@ -51,7 +51,7 @@ public final class FourInALineApplication extends Application {
         stage.setScene(scene);
 
         // On peut ensuite donner un titre à la fenêtre.
-        stage.setTitle("Hello!");
+        stage.setTitle("Puissance 4");
 
         // Enfin, on affiche la fenêtre.
         stage.show();
