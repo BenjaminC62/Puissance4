@@ -18,8 +18,6 @@ package fr.univartois.butinfo.ihm.fourinaline;
 
 import java.io.IOException;
 
-import fr.univartois.butinfo.ihm.fourinaline.controller.FourInALineController;
-import fr.univartois.butinfo.ihm.fourinaline.model.Game;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -45,19 +43,15 @@ public final class FourInALineApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Il faut d'abord récupérer la description de la vue (au format FXML).
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("./view/puissance4.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("puissance4.fxml"));
         Parent viewContent = fxmlLoader.load();
-
-        FourInALineController controller = fxmlLoader.getController();
-        Game game = new Game();
-        controller.setGame(game);
 
         // Ensuite, on la place dans la fenêtre.
         Scene scene = new Scene(viewContent);
         stage.setScene(scene);
 
         // On peut ensuite donner un titre à la fenêtre.
-        stage.setTitle("Puissance 4!");
+        stage.setTitle("Hello!");
 
         // Enfin, on affiche la fenêtre.
         stage.show();
