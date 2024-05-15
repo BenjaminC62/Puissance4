@@ -11,7 +11,6 @@ import java.util.Optional;
 
 public class Game {
 
-    private Grid grid;
     public static final String FULL = "La grille est pleine";
 
     public Button[] getMoveButtons() {
@@ -22,8 +21,6 @@ public class Game {
         return cells;
     }
 
-    private Button[] moveButtons;
-    private ImageView[][] cells;
 
     public Button[] getTabButton() {
         return tabButton;
@@ -40,9 +37,7 @@ public class Game {
         this.game = game;
     }
 
-
     private Token jeton; // On declare la variable (on la juste creer on doit donc affecter une valeur a cette var)
-
 
     private Button[] tabButton;
     private ImageView[][] tabImage;
@@ -53,9 +48,6 @@ public class Game {
         init();
     }
 
-    private void initPartie(){
-
-    }
 
     public Grid getGrille() {
         return grid;
@@ -77,8 +69,16 @@ public class Game {
 
     }
 
-    public Token getToken(){
+    public Grid getGrid() {
         return grid;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public Token getJeton() {
+        return jeton;
     }
 
     private void placeToken(int column, ActionEvent event) {
@@ -104,14 +104,6 @@ public class Game {
             }
         } else {
             System.out.println("Error");
-        }
-    }
-
-    private void afficheGrid(){
-        for(int i = 0 ; i < cells.length ; i++){
-            for(int j = 0 ; j < cells[i].length; j ++){
-                cells[i][j].setImage(loadImage(game.getGrille().get(i,j).toString()));
-            }
         }
     }
 

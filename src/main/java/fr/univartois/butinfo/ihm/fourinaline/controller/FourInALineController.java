@@ -21,7 +21,10 @@ import java.net.URL;
 
 public class  FourInALineController{
 
+    private Button[] moveButtons;
+    private ImageView[][] cells;
 
+    private Grid grid;
 
     @FXML // fx:id="mainGrid"
     private GridPane mainGrid; // Value injected by FXMLLoader
@@ -117,5 +120,13 @@ public class  FourInALineController{
                 cells[row - 1][column] = view;
             }
         }init();
+    }
+
+    private void afficheGrid(){
+        for(int i = 0 ; i < cells.length ; i++){
+            for(int j = 0 ; j < cells[i].length; j ++){
+                cells[i][j].setImage(loadImage(game.getGrille().get(i,j).toString()));
+            }
+        }
     }
 }
