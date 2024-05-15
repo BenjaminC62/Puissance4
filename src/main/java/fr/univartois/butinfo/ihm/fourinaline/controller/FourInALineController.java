@@ -17,34 +17,73 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 import java.net.URL;
+import java.util.Optional;
 
 
 public class  FourInALineController{
+    private Game game;
 
+    private Token jeton;
+
+    /**
+     *  Tableau de button.
+     */
+    private Button[] tabButton;
+
+    private ImageView[][] tabImage;
+
+    /**
+     * Permet d'avoir la tableau
+     * @return Un tableau d'images
+     */
+    public ImageView[][] getTabImage() {
+        return tabImage;
+    }
+
+    public Button[] getTabButton() {
+        return tabButton;
+    }
+
+    /**
+     * Same as cells.
+     */
     private Button[] moveButtons;
+
+    /**
+     * Permet d'avoir un tableau à deux dimension qui imite la taille de la grille il y aura des images view dedans
+     */
     private ImageView[][] cells;
 
-    private Grid grid;
+    public ImageView[][] getCells() {
+        return cells;
+    }
 
+
+    /**
+     *  Attributs gridPane.
+     *
+     */
     @FXML // fx:id="mainGrid"
     private GridPane mainGrid; // Value injected by FXMLLoader
 
-    @FXML // fx:id="textWinner"
-    private Label textWinner; // Value injected by FXMLLoader
-
+    /**
+     * Permet de créer le jeu.
+     *
+     */
     public FourInALineController(){
-        grid = new Grid();
+        game = new Game();
     }
 
+    /**
+     * Creer la gridPane.
+     *
+     * @return On return la gridPane
+     */
     public GridPane getMainGrid() {
         return mainGrid;
     }
 
-    @FXML // fx:id="texteWinner"
-    private Label texteWinner; // Value injected by FXMLLoader
-
-    @FXML // fx:id="tourPersonne"
-    private Label tourPersonne; // Value injected by FXMLLoader
+    /*  =========== BUTTONS  ===========*/
 
     @FXML
     void onButtonCollumn1(ActionEvent event) {
@@ -87,7 +126,7 @@ public class  FourInALineController{
         init();
     }
 
-
+    /* ======== Methodes ======= */
     private void init(){
         game.getGrille().clear();
         setDesable(false);
@@ -128,5 +167,46 @@ public class  FourInALineController{
                 cells[i][j].setImage(loadImage(game.getGrille().get(i,j).toString()));
             }
         }
+    }
+
+    private void placeToken(int column, ActionEvent event) {
+        Button clickedButton = (Button) event.getSource();
+        int columnIndex = -1;
+        for (int i = 0; i < moveButtons.length; i++) {
+            if (moveButtons[i] == clickedButton) {
+                columnIndex = i;
+                break;
+            }
+        }
+        if (columnIndex == column) {
+            int rowIndex = game.getGrille().play(jeton, columnIndex);
+            if (rowIndex != -1) {
+                cells[rowIndex][columnIndex].setImage(loadImage(game.getGrille().get(rowIndex,columnIndex).toString()));
+                if (game.getGrille().findFourInALine().isPresent() || game.getGrille().isFull()) {
+                    setDesable(true);
+                } else {
+                    jeton = jeton.next();
+                }
+            } else {
+                System.out.println("Error");
+            }
+        } else {
+            System.out.println("Error");
+        }
+    }
+
+    private void setDesable(boolean bool){
+        for(int i = 0 ; i < moveButtons.length; i++){
+            moveButtons[i].setDisable(bool);
+        }
+    }
+
+    public void setGame(Game game){
+        this.game = game;
+    }
+
+    private Image loadImage(String name) {
+        URL urlImage = getClass().getResource("../images" + name + ".gif"); //On recuper le fichier contenat l'image
+        return new Image(urlImage.toExternalForm(), 50, 50, true, false); //ON en fait une representation graphique qu'on peut afficher
     }
 }
