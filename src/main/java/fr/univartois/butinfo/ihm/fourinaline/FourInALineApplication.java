@@ -43,7 +43,7 @@ public final class FourInALineApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Il faut d'abord récupérer la description de la vue (au format FXML).
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("puissance4.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("./view/puissance4.fxml"));
         Parent viewContent = fxmlLoader.load();
 
         // Ensuite, on la place dans la fenêtre.
