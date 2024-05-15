@@ -206,7 +206,7 @@ public class  FourInALineController{
     }
 
     private Image loadImage(String name) {
-        URL urlImage = getClass().getResource("../images" + name + ".gif"); //On recuper le fichier contenat l'image
+        URL urlImage = getClass().getResource("../view/images/" + name + ".gif"); //On recuper le fichier contenat l'image
         return new Image(urlImage.toExternalForm(), 50, 50, true, false); //ON en fait une representation graphique qu'on peut afficher
     }
 }
